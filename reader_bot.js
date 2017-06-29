@@ -19,7 +19,7 @@
 		css.href = "https://appletone.github.io/Reader-Bot/menu.css";
 		document.body.appendChild(css);
 
-        var h_tags = $($('h1, h2, h3, h4, h5, h6, b, strong, u').map(function(i, a){ return a.innerText.trim() })).filter(function(i,a){ return a.trim().length != 0; });
+        var h_tags = $($('h1, h2, h3, h4, h5, h6').map(function(i, a){ return a.innerText.trim() })).filter(function(i,a){ return a.trim().length != 0; });
         var menu_li = $(h_tags).map(function(i,a){ return "<li><a href=#>"+ a + "</a></li>"; }).toArray().join("");
         var menu_src = '<nav class="nav"><ul style="z-index: 9999; "><li><input type="button" onclick="$(\'#menu_ul\').toggle();" value="show/hide" style="float: right; "/></li></ul><ul id="menu_ul"><li>&nbsp;</li>' + menu_li + '</ul><nav>';
 

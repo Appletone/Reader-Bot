@@ -25,7 +25,7 @@ jQuery.fn.highlight = function(pat, fontSize) {
     var middlebit = node.splitText(pos);
     var endbit = middlebit.splitText(pat.length);
     var middleclone = middlebit.cloneNode(true);
-    spannode.style.fontSize = (fontSize + 10) +"px";
+    spannode.style.fontSize = (fontSize + 10) + "px";
     spannode.appendChild(middleclone);
     middlebit.parentNode.replaceChild(spannode, middlebit);
     skip = 1;
@@ -33,13 +33,13 @@ jQuery.fn.highlight = function(pat, fontSize) {
   }
   else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
    for (var i = 0; i < node.childNodes.length; ++i) {
-    i += innerHighlight(node.childNodes[i], pat);
+    i += innerHighlight(node.childNodes[i], pat, fontSize);
    }
   }
   return skip;
  }
  return this.length && pat && pat.length ? this.each(function() {
-  innerHighlight(this, pat.toUpperCase());
+  innerHighlight(this, pat.toUpperCase(), fontSize);
  }) : this;
 };
 

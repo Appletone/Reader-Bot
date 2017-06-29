@@ -11,7 +11,7 @@
 		word_counts = tasks.getSortedList();
 
 		// highlight all key word
-		$( word_counts.slice(0,10).map(function(a){return a}).each(function(i,e){ $('body').highlight(e[0], e[1]) }) );
+		$(word_counts.slice(0,10).map(function(a){return [a[0], a[1]]})).each(function(i,e){ $('body').highlight(e[0], e[1]) });
 
 		var css = document.createElement("link");
         css.rel = "stylesheet";

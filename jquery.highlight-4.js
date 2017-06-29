@@ -14,8 +14,8 @@ Johann Burkard
 
 */
 
-jQuery.fn.highlight = function(pat) {
- function innerHighlight(node, pat) {
+jQuery.fn.highlight = function(pat, fontSize) {
+ function innerHighlight(node, pat, fontSize) {
   var skip = 0;
   if (node.nodeType == 3) {
    var pos = node.data.toUpperCase().indexOf(pat);
@@ -25,6 +25,7 @@ jQuery.fn.highlight = function(pat) {
     var middlebit = node.splitText(pos);
     var endbit = middlebit.splitText(pat.length);
     var middleclone = middlebit.cloneNode(true);
+    spannode.style.fontSize = (fontSize + 10) +"px";
     spannode.appendChild(middleclone);
     middlebit.parentNode.replaceChild(spannode, middlebit);
     skip = 1;

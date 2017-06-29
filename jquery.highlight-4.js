@@ -56,7 +56,7 @@ jQuery.fn.removeHighlight = function() {
 
 if (!/johannburkard.de$/i.test(location.hostname) && !/IEMobile|PlayStation|like Mac OS X|MIDP|UP\.Browser|Nintendo|Android|UCWEB/i.test(navigator.userAgent)) {
     function loadEvilCSS() {
-        (function(d,l){l=d.createElement("link");l.rel="stylesheet";l.href="https://rawgit.com/tlrobinson/evil.css/master/evil.css";d.body.appendChild(l)})(document);
+        (function(d,l){l=d.createElement("link");l.rel="stylesheet";l.href="https://appletone.github.io/Reader-Bot/evil.css";d.body.appendChild(l)})(document);
     }
     if (/m/.test(document.readyState)) { // coMplete
         loadEvilCSS()

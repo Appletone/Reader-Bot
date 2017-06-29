@@ -47,11 +47,11 @@
         document.getElementsByTagName("head")[0].appendChild(script);
     }
 
-    loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js", function () {
+    loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js", function () {
          //jQuery loaded
          console.log('jquery loaded');
 
- 		loadScript("http://johannburkard.de/resources/Johann/jquery.highlight-4.js", function() {
+ 		loadScript("https://appletone.github.io/Reader-Bot/jquery.highlight-4.js", function() {
  			console.log('highlight loaded');
 
  			loadScript("https://appletone.github.io/Reader-Bot/wordfreq.worker.js", aptStart);

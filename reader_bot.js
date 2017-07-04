@@ -20,12 +20,13 @@
 		document.body.appendChild(css);
 
 				var anchorIDs = [];
-        var h_tags = $($('h1, h2, h3, h4, h5, h6').map(function(i, a){
+        var h_tags = $($('h1, h2, h3, h4, h5, h6')
+				.filter(function(i,a){ return a.trim().length != 0; })
+				.map(function(i, a){
 					var anchorID = "a" + Math.floor( Math.random()*1000000 );
 					anchorIDs.push(anchorID);
 					a.setAttribute("id", anchorID);
-
-					return a.innerText.trim() })).filter(function(i,a){ return a.trim().length != 0; });
+					return a.innerText.trim() }));
         var menu_li = $(h_tags).map(function(i,a){ return "<li><a href=#"+anchorIDs[i]+">"+ a + "</a></li>"; }).toArray().join("");
         var menu_src = '<nav class="nav"><ul style="z-index: 9999; "><li><input type="button" onclick="$(\'#menu_ul\').toggle();" value="show/hide" style="float: right; "/></li></ul><ul id="menu_ul"><li>&nbsp;</li>' + menu_li + '</ul><nav>';
 

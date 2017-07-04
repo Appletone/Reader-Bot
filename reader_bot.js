@@ -21,7 +21,7 @@
 
 				var anchorIDs = [];
         var h_tags = $($('h1, h2, h3, h4, h5, h6')
-				.filter(function(i,a){ return a.trim().length != 0; })
+				.filter(function(i,a){ return a.innerText.trim().length != 0; })
 				.map(function(i, a){
 					var anchorID = "a" + Math.floor( Math.random()*1000000 );
 					anchorIDs.push(anchorID);
